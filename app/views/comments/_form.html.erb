@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="orange-text text-darken-3"><%= title 'ほめコメントを書く' %></h1>
+
+  <%= form_with(model: comment, url: comment_path, local: true) do |form| %>
+    <% if comment.errors.any? %>
+      <div id="error_explanation" class="row">
+        <div class="card red lighten-5">
+          <div class="card-content red-text">
+            投稿できませんでした：
+            <ul>
+            <% comment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="input-field">
+      <%= form.label :body, "「#{@message.body}」へのコメントは・・・" %>
+      <%= form.text_area :body, class: 'materialize-textarea', autofocus: true, onkeyup: 'ShowTextLength(value)' %>
+
+      <div class="section grey-text">
+        <span id="inputlength">0</span> / 280文字
+      </div>
+
+      <%= hidden_field :comment, :message_id %>
+      <%= button_tag 'コメントを書く', type: 'submit', class: 'btn waves-effect waves-light light-blue lighten-1' %>
+    </div>
+  <% end %>
+</div>

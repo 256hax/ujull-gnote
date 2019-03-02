@@ -1,0 +1,30 @@
+<div class="container">
+  <h2><%= t('.sign_in') %></h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="input-field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <p>
+        <label>
+          <%= f.check_box :remember_me, class: 'filled-in' %>
+          <span><%= t('activerecord.attributes.user.remember_me') %></span>
+        </label>
+      </p>
+    <% end -%>
+
+    <div class="actions">
+      <%= button_tag t('.sign_in'), type: 'submit', class: 'btn waves-effect waves-light light-blue lighten-1' %>
+    </div>
+  <% end %>
+
+  <p><%= render "users/shared/links" %></p>
+</div>

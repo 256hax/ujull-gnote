@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="orange-text text-darken-3"><%= title 'Myページ' %></h1>
+
+  <h2>サマリー</h2>
+  <div class="row">
+    <div class="col s12 m4">
+      <div class="card summary-card">
+        <div class="card-content center-align">
+          <p><i class="material-icons blue-text">mode_edit</i></p>
+          <h3><%= link_to @users_summary.messages_count, users_messages_path %></h3>
+          <p class="grey-text">自分をほめた数</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="card summary-card">
+        <div class="card-content center-align">
+          <p><i class="material-icons blue-text">reply</i></p>
+          <h3><%= link_to @users_summary.comments_count, users_comments_path %></h3>
+          <p class="grey-text">ほかのひとをほめた数</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="card summary-card">
+        <div class="card-content center-align">
+          <p><i class="material-icons red-text">favorite</i></p>
+          <h3><%= @users_summary.likes_count %></h3>
+          <p class="grey-text">いいねした数</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>メニュー</h2>
+  <div class="row">
+    <ul>
+      <li><%= link_to 'Myノート', users_messages_path %></li>
+      <li><%= link_to 'Myコメント', users_comments_path %></li>
+      <li><%= link_to 'アカウント編集', edit_user_registration_path %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %></li>
+    </ul>
+  </div>
+</div>

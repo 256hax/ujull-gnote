@@ -1,0 +1,395 @@
+{
+  "id": "f3c4b316-ce02-4e6c-9167-f07327a819cb",
+  "version": "2.0",
+  "name": "ほめノート RPA",
+  "url": "http://localhost:3000/messages/",
+  "tests": [{
+    "id": "f3241ceb-5070-4c1b-b5c3-bf0d695d225e",
+    "name": "10 Posts to Message",
+    "commands": [{
+      "id": "f4f007bb-18cc-4d34-9c98-6b18576c8095",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/messages/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aecea711-fed3-492d-abbe-56019a11bbab",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1242x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68c0a648-e6c0-4d6c-a37b-b76c79857a6e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//div[2]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bbb03a9-2747-464c-b165-7b930967dda1",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "49914df4-87ff-4b16-bc64-c2d04bc2003b",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df394a26-a51d-4c8c-a556-4591e1d6cda1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90141bb9-399d-4ca5-959b-200099d4d5a0",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "d92c2de0-eba6-43ba-81c0-9158ab6894ba",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e14f5f2-7f9c-4b11-b1aa-1fb99e0032ea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f74a115d-0183-45c3-9527-76e230ca9ea7",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "69b83f1a-4a0f-4b8f-9cfc-a1dc976447da",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7ff4889-f59f-4bf7-8db8-235476a74558",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "939cd0bb-c5c1-4633-9d15-7b1af4b8da28",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "6dddb92d-7674-44b2-98f4-644fb7fc99ea",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d920148d-ad43-4160-946f-d159c065c39e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe38f930-dffb-4171-9540-4741d8c550b3",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "3285b76a-e6da-437f-95e3-3b612eca9674",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcd64322-fa7a-4505-8426-95f0f1b29378",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3ac66c4-2926-4d4c-bd25-a79b2732f678",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "dfb9d070-8418-4f17-9896-96a80803382f",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47fd43cf-3a43-46b3-b52f-0021b8fcc273",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe44e412-9d6c-4bbf-850f-dc33145e42ea",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "ba626f6f-3b6e-44f9-868c-a354326e39cb",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8994fd8-387a-462c-b908-1ab84487e8bd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19457bd7-926d-404d-a0bd-6504ee99ed47",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "71ead4a3-db5a-40a4-b9db-9c53a39e9502",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d703460-b44d-4216-952e-6c87032329d7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8006f2f1-84b3-41a2-8491-06224b663476",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "c8346180-b6f7-49fd-b8d7-75d4acef9fbf",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c94c1cc-f161-488d-8825-36373934cd32",
+      "comment": "",
+      "command": "click",
+      "target": "css=.large",
+      "targets": [
+        ["css=.large", "css:finder"],
+        ["xpath=//body/div[3]/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c379aab8-7fbb-4f52-855a-86a2af0e1bdc",
+      "comment": "",
+      "command": "type",
+      "target": "id=message_body",
+      "targets": [
+        ["id=message_body", "id"],
+        ["name=message[body]", "name"],
+        ["css=#message_body", "css:finder"],
+        ["xpath=//textarea[@id='message_body']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "698d4163-5873-4cd6-87dc-5591fd1f9cb1",
+      "comment": "",
+      "command": "click",
+      "target": "name=button",
+      "targets": [
+        ["name=button", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'ほめノートに書く')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3e4de04e-2ff4-42e3-b6e2-e7ea56ba1bec",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:3000/messages/new/", "http://localhost:3000/messages/"],
+  "plugins": []
+}

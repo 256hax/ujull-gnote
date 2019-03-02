@@ -1,0 +1,3 @@
+/* Reload rendering show latest likes count. */
+var elem = document.getElementById('likes_buttons_<%= @message.id %>');
+elem.innerHTML = "<%= j(render partial: 'likes/like', locals: {message: @message}) %>";

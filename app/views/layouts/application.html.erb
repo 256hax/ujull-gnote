@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags site: 'みんなのほめノート' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!--Import Google Icon Font-->
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+    <!--Import materialize.css-->
+    <%= stylesheet_link_tag 'materialize.min' %>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--JavaScript at end of body for optimized loading-->
+    <%= javascript_include_tag 'materialize.min' %>
+    <%= favicon_link_tag('favicon.ico') %>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="orange darken-2">
+      <div class="nav-wrapper container">
+        <%= link_to '😊みんなのほめノート🌟', root_path %>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to 'ほめノートとは？', articles_about_path %></li>
+          <li><%= link_to '使い方', articles_howto_path %></li>
+          <li><%= link_to '書いてみる', new_message_path %></li>
+          <% unless user_signed_in? %>
+            <li><%= link_to 'アカウント登録', new_user_registration_path %></li>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <% end %>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Myページ', users_summaries_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><%= link_to 'TOP', root_path %></li>
+      <li><%= link_to 'ほめノートとは？', articles_about_path %></li>
+      <li><%= link_to '使い方', articles_howto_path %></li>
+      <li><%= link_to '書いてみる', new_message_path %></li>
+    </ul>
+
+    <% if notice %>
+      <div class="container">
+        <div class="row">
+          <div class="card blue lighten-5">
+            <div class="card-content blue-text">
+              <%= notice %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="container">
+        <div class="row">
+          <div class="card red lighten-5">
+            <div class="card-content red-text">
+              <%= alert %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <!-- Floating with Scrollspy Action Button -->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light light-blue lighten-1" href="<%= new_message_path %>">
+        <i class="large material-icons">mode_edit</i>
+      </a>
+    </div>
+
+    <footer class="page-footer orange">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">みんなのほめノート📔</h5>
+            <p class="grey-text text-lighten-4">まいにち、自分をほめよう！ 自分へのほめ言葉が匿名で書ける「みんなのほめノート」</p>
+            <p class="grey-text text-lighten-4"><a class="grey-text text-lighten-4" href="https://github.com/256hax/tanebox" target="_blank"><%= image_tag 'logo-GitHub-Mark-Light-32px.png' %></a></p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">メニュー</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="<%= root_path %>">ほめノートTOP</a></li>
+              <li><a class="grey-text text-lighten-3" href="<%= articles_about_path %>">ほめノートとは？</a></li>
+              <li><a class="grey-text text-lighten-3" href="<%= articles_howto_path %>">ほめノートの使い方</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright orange darken-2">
+        <div class="container">
+          <a class="grey-text text-lighten-4" href="https://twitter.com/256hax" target="_blank">by 256hax</a>
+          <a class="grey-text text-lighten-4 right" href="https://tanebox.com/">→ tanebox</a>
+        </div>
+      </div>
+    </footer>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

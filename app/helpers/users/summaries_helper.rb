@@ -1,0 +1,2 @@
+module Users::SummariesHelper
+end

@@ -1,0 +1,60 @@
+<% @messages.each do |m| %>
+  <div class="row" id="message-<%= m.id %>">
+    <div class="divider"></div>
+    <div class="section">
+      <% cache m do %>
+        <div class="col s12">
+          <span class="grey-text">匿名さん・<%= time_ago_in_words(m.created_at) %>前</span>
+        </div>
+        <div class="col s12">
+          <p><%= m.body %></p>
+        </div>
+        <div class="col s1">
+          <a href="<%= new_comment_path(m.id) %>" rel="nofollow"><i class="material-icons">reply</i></a>
+        </div>
+      <% end # cache m %>
+      <!-- Like -->
+      <div class="col s3">
+        <div id="likes_buttons_<%= m.id %>">
+         <%= render partial: 'likes/like', locals: { message: m } %>
+        </div>
+      </div>
+      <!-- Action -->
+      <% if user_signed_in? %>
+        <% if my_own_message?(m.user_id, current_user.id) %>
+          <div class="col s3">
+            <%= link_to '削除', message_path(m.id), method: :delete, data: { confirm: '削除しますか？' }, class: 'red-text' %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Replies -->
+  <% m.comments.each do |c| %>
+    <div class="row" id="comment-<%= c.id %>">
+      <div class="divider"></div>
+      <div class="section">
+        <% cache c do %>
+          <div class="col s11 offset-s1">
+            <span class="grey-text">匿名さん・<%= time_ago_in_words(c.created_at) %>前</span>
+          </div>
+          <div class="col s11 offset-s1">
+            <p><span class="grey-text text-darken-2"><%= c.body %></span></p>
+          </div>
+        <% end # cache c %>
+        <!-- Action -->
+        <% if user_signed_in? %>
+          <% if my_own_comment?(c.user_id, current_user.id) %>
+            <div class="col s3 offset-s4">
+              <%= link_to '削除', comment_path(c.id), method: :delete, data: { confirm: '削除しますか？' }, class: 'red-text' %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end # m.comments.each  %>
+<% end # @messages.each %>
+
+<div class="divider"></div>
+<%= paginate(@messages) %>

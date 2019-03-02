@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="orange-text text-darken-3"><%= title 'ほめノートに書く' %></h1>
+
+  <%= form_with(model: message, local: true) do |form| %>
+    <% if message.errors.any? %>
+      <div id="error_explanation" class="row">
+        <div class="card red lighten-5">
+          <div class="card-content red-text">
+            投稿できませんでした：
+            <ul>
+            <% message.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="input-field">
+      <%= form.label :body, '今日の自分へのほめ言葉は・・・' %>
+      <%= form.text_area :body, class: 'materialize-textarea', autofocus: true, onkeyup: 'ShowTextLength(value)' %>
+
+      <div class="section grey-text">
+        <span id="inputlength">0</span> / 280文字
+      </div>
+
+      <%= button_tag 'ほめノートに書く', type: 'submit', class: 'btn waves-effect waves-light light-blue lighten-1' %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="section">
+      <h4>ほめ方に悩んでいますか？</h4>
+      <p>ほかのひとがどんな感じでほめているのか、Twitterも参考になりますよ。</p>
+      <p><a class="twitter-timeline"  href="https://twitter.com/search?q=%E5%81%89%E3%81%84%20%E3%81%99%E3%81%94%E3%81%84" target="_blank" data-widget-id="960678433960308736">ほめてるツイートを見てみる</a></p>
+    </div>
+  </div>
+</div>

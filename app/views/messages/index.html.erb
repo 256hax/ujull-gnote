@@ -1,0 +1,41 @@
+<% title 'TOP' %>
+
+<div class="container">
+  <h1 class="orange-text text-darken-3">みんなのほめノート</h1>
+  <p>まいにち、自分をほめよう！ 自分へのほめ言葉が匿名で書ける「みんなのほめノート」</p>
+
+  <div class="row">
+
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag 'articles/eyecatch-box-2953722_640.jpg' %>
+        </div>
+        <div class="card-content">
+          <p>人間は、ほめられるとそれが自分へのご褒美となって、モチベーションや思考力が高まることをご存知ですか？ そして自分自身をほめても効果があると言われています。</p>
+        </div>
+        <div class="card-action">
+          <a class="blue-text" href="<%= articles_about_path %>">もっと詳しく見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="section">
+      <div class="col s12">
+        <a class="btn-floating btn-large waves-effect waves-light light-blue lighten-1" href="<%= new_message_path %>"><i class="material-icons">mode_edit</i></a>
+      </div>
+    </div>
+    <div class="section">
+      <div class="col s12">
+        <p>↑このボタン✎から書き込みできます！</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <h2>直近<%= @record_count %>件のほめノート</h2>
+  <p>アカウント登録すると、自分の書き込みはMyページからもっと見ることができます。</p>
+  <%= render 'messages' %>
+</div>
