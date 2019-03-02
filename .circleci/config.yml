@@ -9,6 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
+          RAILS_ENV: test
           BUNDLER_VERSION: 2.0.1
 
       # Specify service dependencies here if necessary
@@ -58,7 +59,7 @@ jobs:
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
               circleci tests split --split-by=timings)"
 
-            bundle exec rails spec \
+            bundle exec rspec \
               --format progress \
               --format RspecJunitFormatter \
               --out /tmp/test-results/rspec.xml \
