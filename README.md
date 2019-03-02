@@ -2,7 +2,7 @@ My Pet Project. gnote (ほめノート📔) is praise comments service.
 - All users are anonymous
 - Praise comments to myself
 
-![ほめノート](https://raw.githubusercontent.com/256hax/ujull/master/gnote/docs/gnote-screentshot.png)
+![ほめノート](https://raw.githubusercontent.com/256hax/ujull-gnote/master/docs/gnote-screentshot.png)
 
 ## Technologies
 ### Frontend Layer
