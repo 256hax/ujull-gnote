@@ -44,7 +44,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  # Devise
+  # Devise Mail Authentication
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.action_mailer.smtp_settings = {
@@ -52,8 +52,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => Rails.application.credentials.gmail[:username], #gmailアドレス
-    :password => Rails.application.credentials.gmail[:password], #gmailパスワード
+    :user_name => Rails.application.credentials.gmail[:username], # Gmail Address
+    :password => Rails.application.credentials.gmail[:password], # Gmail Password
     :authentication => 'login',
   }
 end
