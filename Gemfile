@@ -58,7 +58,6 @@ group :development, :test do
   gem 'rails-controller-testing' # If use assigns
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rspec_junit_formatter' # JUnit Report for CircleCI
 end
 
 group :development do
