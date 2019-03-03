@@ -14,8 +14,8 @@ before_script:
   - cp config/database.yml.travis config/database.yml
 
 script:
-  - bin/rails db:migrate RAILS_ENV=test
-  - bin/rails test
+  - bundle exec rails db:setup RAILS_ENV=test
+  - bundle exec rails spec
 
 notifications:
   email: false
