@@ -12,6 +12,7 @@ before_script:
   - cp config/database.yml.travis config/database.yml
 
 script:
+  - gem install bundler:2.0.1
   - bin/rails db:migrate RAILS_ENV=test
   - bin/rails test
 
