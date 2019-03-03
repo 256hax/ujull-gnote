@@ -43,7 +43,7 @@ capybara-*.html
 # Ignore master key for decrypting credentials and more.
 config/initializers/secret_token.rb
 /config/master.key
-credentials.yml.enc
+#credentials.yml.enc # Use for CircleCI
 
 # Mac
 .DS_Store
