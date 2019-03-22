@@ -1,21 +1,22 @@
 language: ruby
-
 services:
-  - postgresql
-
-bundler_args: --jobs=3 --retry=3
+- postgresql
+bundler_args: "--jobs=3 --retry=3"
 cache: bundler
-
 before_install:
-  # Install latest 1.x and 2.x bundler for Avoid GemNotFoundException error.
-  - gem install bundler -v 1.17.3
-  - gem install bundler -v 2.0.1
-
+- gem install bundler -v 1.17.3
+- gem install bundler -v 2.0.1
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
-
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: <%= Rails.application.credentials.heroku[:api_key] %>
+  app: ujull-gnote
+  on:
+    repo: 256hax/ujull-gnote
 script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rspec spec
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec spec

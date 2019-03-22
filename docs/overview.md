@@ -12,3 +12,7 @@
 ### 3. Show Likes Latest
 1. Reload rendering likes/create.js with latest likes count
 2. Show latest likes count
+
+## Maintenance
+### Edit ID/PW List (credentials.yml.enc) Command
+$ EDITOR="vi" bin/rails credentials:edit

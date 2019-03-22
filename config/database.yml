@@ -9,8 +9,6 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= Rails.application.credentials.psql_development[:username] %>
-  password: <%= Rails.application.credentials.psql_development[:password] %>
   host: localhost
   timeout: 5000
 
@@ -18,6 +16,8 @@ development:
   <<: *default
   #database: db/development.sqlite3
   database: tanebox_gnote_development
+  username: <%= Rails.application.credentials.psql_development[:username] %>
+  password: <%= Rails.application.credentials.psql_development[:password] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -26,6 +26,8 @@ test:
   <<: *default
   #database: db/test.sqlite3
   database: tanebox_gnote_test
+  username: <%= Rails.application.credentials.psql_development[:username] %>
+  password: <%= Rails.application.credentials.psql_development[:password] %>
 
 production:
   <<: *default
