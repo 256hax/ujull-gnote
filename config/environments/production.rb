@@ -93,7 +93,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Devise Mail Authentication
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  production_url = 'ujull-gnote.herokuapp.com'
+  config.action_mailer.default_url_options = { host: production_url, port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
