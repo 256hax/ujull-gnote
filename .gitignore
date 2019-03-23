@@ -35,7 +35,7 @@ capybara-*.html
 # bin, Node, Yarn
 /node_modules
 /yarn-error.log
-/bin/
+#/bin/ # Comment Out for Heroku
 
 # Ignore Byebug command history file.
 .byebug_history
