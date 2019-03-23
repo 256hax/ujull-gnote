@@ -8,15 +8,19 @@ My Pet Project. gnote (ほめノート📔) is praise comments service.
 
 ## Technologies
 ### Frontend Layer
-- Materialize
-- Google Japanese Fonts
+- [Materialize](https://materializecss.com/)
+- Google Japanese Fonts [(font-family: 'M PLUS Rounded 1c')](https://googlefonts.github.io/japanese/#mplus1p)
 - Vanilla JS, Ajax
 
 ### Application Layer
-- Ruby on Rails 💎
-- Test Framework: RSpec
+- [Ruby on Rails](https://rubyonrails.org/) 💎
+- Test Framework: [RSpec](http://rspec.info/)
 
 ### Middleware Layer
-- Nginx
-- PostgreSQL
+- [Nginx](https://nginx.org/en/)
+- [PostgreSQL](https://www.postgresql.org/)
 - Active Record
+
+### Development
+- CI Tool: [Travis CI](https://travis-ci.org/256hax/ujull-gnote)
+- Repository: [GitHub](https://github.com/256hax/ujull-gnote)
