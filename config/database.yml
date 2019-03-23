@@ -31,8 +31,8 @@ test:
 
 production:
   <<: *default
-  #database: db/production.sqlite3
   database: tanebox_gnote_production
-
+  url: <%= Rails.application.credentials.heroku[:database_url] %>
+  
 # Edit Credentials Command.
 # $ EDITOR="vim" rails credentials:edit
