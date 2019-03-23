@@ -31,8 +31,8 @@ test:
 
 production:
   <<: *default
-  database: tanebox_gnote_production
-  url: <%= Rails.application.credentials.heroku[:database_url] %>
-  
+  # Read Heroku env. Command "$ heroku config" if need see all of env.
+  url: <%= ENV['DATABASE_URL'] %>
+
 # Edit Credentials Command.
 # $ EDITOR="vim" rails credentials:edit
