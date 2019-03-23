@@ -21,6 +21,9 @@ My Pet Project. gnote (ほめノート📔) is praise comments service.
 - [PostgreSQL](https://www.postgresql.org/)
 - Active Record
 
+### Infra Layer
+- [Heroku](https://heroku.com)
+
 ### Development
 - CI Tool: [Travis CI](https://travis-ci.org/256hax/ujull-gnote)
 - Repository: [GitHub](https://github.com/256hax/ujull-gnote)
