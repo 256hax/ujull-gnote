@@ -94,7 +94,7 @@ Rails.application.configure do
 
   # Devise Mail Authentication
   production_url = 'ujull-gnote.herokuapp.com'
-  config.action_mailer.default_url_options = { host: production_url, port: 3000 }
+  config.action_mailer.default_url_options = { host: production_url }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
