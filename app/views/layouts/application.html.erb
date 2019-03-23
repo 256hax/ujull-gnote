@@ -24,25 +24,13 @@
         <%= link_to '😊みんなのほめノート🌟', root_path %>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><%= link_to 'ほめノートとは？', articles_about_path %></li>
-          <li><%= link_to '使い方', articles_howto_path %></li>
-          <li><%= link_to '書いてみる', new_message_path %></li>
-          <% unless user_signed_in? %>
-            <li><%= link_to 'アカウント登録', new_user_registration_path %></li>
-            <li><%= link_to 'ログイン', new_user_session_path %></li>
-          <% end %>
-          <% if user_signed_in? %>
-            <li><%= link_to 'Myページ', users_summaries_path %></li>
-          <% end %>
+          <%= render partial: 'layouts/menu' %>
         </ul>
       </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-      <li><%= link_to 'TOP', root_path %></li>
-      <li><%= link_to 'ほめノートとは？', articles_about_path %></li>
-      <li><%= link_to '使い方', articles_howto_path %></li>
-      <li><%= link_to '書いてみる', new_message_path %></li>
+      <%= render partial: 'layouts/menu' %>
     </ul>
 
     <% if notice %>
