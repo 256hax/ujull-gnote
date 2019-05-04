@@ -9,13 +9,6 @@ before_install:
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - cp config/database.yml.travis config/database.yml
-deploy:
-  provider: heroku
-  api_key:
-    secure: DCzGKlonMSOyRqiXGZUl+/itdc9mn4nZjS2RP0T/K0fvv5cKFwCLFhKyp4m8WyTedSJrzhJE21ciZ3sMPVfLJ4syXfrO1Gs30iLYITOz2rVnPr5WYexc5AfEtNYh4nlPeWcrwvQtyxW6ZazelR5zODpYXUzIZ3Wcb4+F4EhV//VWrVsPyQZolN/Go1BppNdSwhJtRoPAX3vjWSuXwS8DXDim3c3+akwPGPdRwO/8LxuwVmlmTNvIgphsxuwIjoUJ17GUUHgTdfQ5P5pbAitlN2PkYzDcDjlu+0pJBQ0dSZugaq0IfSWX/y5DDx235WdHsLDy38Yg46Lly09t9t3Kn7Vg56ctW+dxpVMbFI71UEJECSsiFKI9sQ5W9q9Ho82lHG8nzqRhw9L5n1+98ePP5JkvQpOwJwSRPGBu+4i7tUNZJqRzwqqpAnTbiifJyBGRHcRMaJ0agqdjn6IGNXnmdyZEY9qvmCrRN+sn+2RMBGZVYFRbREPy4rGEHYOhxNUb2HSXgzVzm8IQp6dw8J9a2Q2rFc+z9B5b318XADRm96jP4mWcguf+qk+rt2iNfHI/s+kLQhloimakJCx8f5zcSWwR5coUFxDP/XX5iV8KlsDsd2yW5ZxDXl2v87uN3P1gCuo1oIQK0kvyPm/i+gf1nO+secT+ettkl1lNTJbSddc=
-  app: ujull-gnote
-  on:
-    repo: 256hax/ujull-gnote
 script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
