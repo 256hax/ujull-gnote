@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Devise Mail Authentication
-  production_url = 'ujull-gnote.herokuapp.com'
+  production_url = 'gnote.ujull.com'
   config.action_mailer.default_url_options = { host: production_url }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
