@@ -17,10 +17,10 @@ My Pet Project. gnote (ほめノート📔) is praise comments service.
 - Test Framework: [RSpec](http://rspec.info/)
 
 ### Middleware Layer
-- [Dokku](https://github.com/dokku/dokku) 🐳
 - [Nginx](https://nginx.org/en/)
+- [Puma](https://puma.io/)
 - [PostgreSQL](https://www.postgresql.org/) 🐘
-- Active Record
+- [Dokku](https://github.com/dokku/dokku) 🐳
 
 ### Infra Layer
 - [Sakura VPS](https://vps.sakura.ad.jp/)
