@@ -23,6 +23,7 @@ My Pet Project. gnote (ほめノート📔) is praise comments service.
 - [Dokku](https://github.com/dokku/dokku) 🐳
 
 ### Infra Layer
+- [Ubuntu](https://www.ubuntu.com/)
 - [Sakura VPS](https://vps.sakura.ad.jp/)
 
 ### Development
