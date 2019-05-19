@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'messages#index'
+  get '/messages', to: redirect('/')
+
   scope :comments do
     get ':message_id/new', to: 'comments#new', as: :new_comment
     post ':message_id', to: 'comments#create', as: :comment
@@ -26,5 +29,4 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {registrations: "users/registrations"}
 
-  root to: 'messages#index'
 end
