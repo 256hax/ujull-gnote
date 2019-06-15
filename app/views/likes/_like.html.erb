@@ -2,24 +2,24 @@
 
 <% if user_signed_in? # signed in %>
   <% unless message.like_user(current_user.id).blank? # signedin & liked %>
-    <%= link_to message_likes_path(message.id), method: :post, remote: true do %>
-      <div class="vertical_like">
+    <div class="vertical_like">
+      <%= link_to message_likes_path(message.id), method: :post, remote: true do %>
         <i class="material-icons red-text">favorite</i>
         <span class="red-text">
           <%= display_likes_count(message.likes_count) %>
         </span>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% else # signed in & not liked %>
-    <%= link_to message_likes_path(message.id), method: :post, remote: true do %>
-      <div class="vertical_like">
+    <div class="vertical_like">
+      <%= link_to message_likes_path(message.id), method: :post, remote: true do %>
         <i class="material-icons grey-text text-darken-2">favorite_border</i>
         <span class="grey-text text-darken-2">
           <%# This module is in the helpers. %>
           <%= display_likes_count(message.likes_count) %>
         </span>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 <% else # not signed in & (liked/not liked) %>
   <div class="vertical_like">
