@@ -38,6 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-i18n'
 gem 'meta-tags'
 gem 'kaminari'
+# https://github.com/collectiveidea/delayed_job
+gem 'delayed_job_active_record'
 
 # Devise
 gem 'devise'
