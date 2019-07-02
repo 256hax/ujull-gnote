@@ -35,13 +35,17 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+#--- Front ---
 gem 'rails-i18n'
 gem 'meta-tags'
 gem 'kaminari'
+
+#--- Back ---
 # https://github.com/collectiveidea/delayed_job
 gem 'delayed_job_active_record'
+gem "activerecord-import"
 
-# Devise
+#--- Devise ---
 gem 'devise'
 gem 'devise-i18n'
 
