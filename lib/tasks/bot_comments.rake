@@ -11,38 +11,39 @@ namespace :bot_comments do
     #   b. コメント作成
     # 3. コメントをバルクインサート
 
-    hours_count = 1.freeze
-    messages = Message.recently_within_hours(hours_count)
-    open_random_dictionaries(messages)
-    new_comments(messages, @random_dictionaries)
-    p @comments
+    HOURS_COUNT = 10.freeze # [todo]あとで正しい値に変える
+    GOOD_WORDS_FILE_PATH = "#{Rails.root.to_s}/lib/dictionaries/good_words.txt".freeze
 
-    # @messages.each do |m|
-    #   @comment = new_comment(Time.now.to_s, m.id)
-    #   @comment.save
-    # end
+    messages = Message.recently_within_hours(HOURS_COUNT)
+    open_dictionaries(messages, GOOD_WORDS_FILE_PATH)
+    random_bot_comments(messages, @good_words_list)
+    Comment.import @comments # Bulk insert(activerecord-import Gem)
   end
 end
 
-def open_random_dictionaries(messages)
-  # [todo] ほめ辞書ファイルを読み込む
-  @random_dictionaries = []
-  messages.count.times do
-    @random_dictionaries << 1
-  end
+def open_dictionaries(messages, good_word_file_path)
+  @good_words_list = []
+  File.foreach(good_word_file_path) { |l|
+    @good_words_list << l.chomp
+  }
 end
 
-def new_comments(messages, random_dictionaries)
+def random_bot_comments(messages, good_words_list)
   # fixed value "user_id = 2" is Bot user.
   user_id = 2.freeze
   @comments = []
 
-  messages.each_with_index do |m, i|
-    sanitized_random_dictionary = ApplicationController.helpers.sanitize(random_dictionaries[i].to_s)
-    @comments << Comment.new({
-      body: sanitized_random_dictionary,
-      message_id: m.id,
-      user_id: user_id
-    })
+  messages.each do |m|
+    # draw_lots_with_rate is in concerns/randomable.rb
+    if draw_lots_rate_one(2) then
+      good_word_random_number = rand(good_words_list.count)
+      sanitized_good_word = ApplicationController.helpers.sanitize(good_words_list[good_word_random_number].to_s)
+
+      @comments << Comment.new({
+        body: sanitized_good_word,
+        message_id: m.id,
+        user_id: user_id
+      })
+    end
   end
 end
