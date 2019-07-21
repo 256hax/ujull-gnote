@@ -19,6 +19,8 @@ class Message < ApplicationRecord
     .where(created_at: (hours_count.hours.ago)..(Time.now))
   }
 
+  scope :sentence, -> { where('length(body) > 8') }
+
   validates :body, length: { in: 1..280 }
 
   def like_user(user_id)
