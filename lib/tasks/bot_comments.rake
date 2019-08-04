@@ -8,9 +8,9 @@ GOOD_WORDS_FILE_PATH = "#{Rails.root.to_s}/lib/dictionaries/good_words.txt".free
 USER_ID = 1.freeze
 
 namespace :bot_comments do
-  desc "Bot comments to messages posted whithin 1 hour"
-  task :first_wave => :environment do
-    HOURS_COUNT = 10.freeze
+  desc "Bot posts comments first waves"
+  task :first_waves => :environment do
+    HOURS_COUNT = 1.freeze
     RADOM_RATE = 2.freeze
 
     # Get Messages
@@ -22,14 +22,22 @@ namespace :bot_comments do
     # Bulk insert(activerecord-import Gem)
     Comment.import(comments)
   end
-end
 
-# def open_dictionaries(file_path)
-#   @good_words_list = []
-#   File.foreach(file_path) { |w|
-#     @good_words_list << w.chomp
-#   }
-# end
+  desc "Bot posts comments second waves"
+  task :second_waves => :environment do
+    HOURS_COUNT = 12.freeze
+    RADOM_RATE = 5.freeze
+
+    # Get Messages
+    messages = Message.recently_within_hours(HOURS_COUNT).sentence
+    # Open good words dictionary file
+    words_list = open_file_with_new_line_to_array(GOOD_WORDS_FILE_PATH)
+    # New random comments
+    comments = random_bot_comments(messages, words_list, RADOM_RATE)
+    # Bulk insert(activerecord-import Gem)
+    Comment.import(comments)
+  end
+end
 
 def random_bot_comments(messages, words_list, random_rate)
   comments = []
