@@ -11,6 +11,16 @@ class Message < ApplicationRecord
     .order('comments.id desc')
   }
 
+  # Active messages posted within target hours.
+  # args     : int (hours)
+  # returns  : obj (messages)
+  scope :recently_within_hours, -> (hours_count){
+    order(id: :asc)
+    .where(created_at: (hours_count.hours.ago)..(Time.now))
+  }
+
+  scope :sentence, -> { where('length(body) > 8') }
+
   validates :body, length: { in: 1..280 }
 
   def like_user(user_id)
