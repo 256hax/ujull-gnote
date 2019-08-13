@@ -18,8 +18,8 @@ FactoryBot.define do
     body { Faker::Lorem.sentence }
     user_id { 1 }
     likes_count { 0 }
-    created_at { Date.today }
-    updated_at { Date.today }
+    created_at { Time.now }
+    updated_at { Time.now }
   end
 
   factory :n_message_post_yesterday, class: 'Message' do
@@ -27,7 +27,7 @@ FactoryBot.define do
     body { Faker::Lorem.sentence }
     user_id { 1 }
     likes_count { 0 }
-    created_at { Date.today - 1 }
-    updated_at { Date.today - 1 }
+    created_at { Time.now - 1.day }
+    updated_at { Time.now - 1.day }
   end
 end
