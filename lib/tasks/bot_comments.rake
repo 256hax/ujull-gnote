@@ -3,7 +3,7 @@ require "#{Rails.root.to_s}/app/controllers/concerns/file_controllable.rb"
 include Randomable # concerns/commentable.rb
 include FileControllable # concerns/file_controllable.rb
 
-GOOD_WORDS_FILE_PATH = "#{Rails.root.to_s}/lib/dictionaries/good_words.txt".freeze
+GOOD_WORDS_FILE_PATH = "#{Rails.root.to_s}/lib/dictionaries/good_words.yml".freeze
 # "user_id = 1" is Bot user_id. Fixed value.
 USER_ID = 1.freeze
 
@@ -15,8 +15,8 @@ namespace :bot_comments do
 
     # Get Messages
     messages = Message.recently_within_hours(HOURS_COUNT).sentence
-    # Open good words dictionary file
-    words_list = open_file_with_new_line_to_array(GOOD_WORDS_FILE_PATH)
+    # Call concerns/file_controllable.rb
+    words_list = open_yaml_two_level_value_to_array(GOOD_WORDS_FILE_PATH)
     # New random comments
     comments = random_bot_comments(messages, words_list, RADOM_RATE)
     # Bulk insert(activerecord-import Gem)
@@ -31,7 +31,7 @@ namespace :bot_comments do
     # Get Messages
     messages = Message.recently_within_hours(HOURS_COUNT).sentence
     # Open good words dictionary file
-    words_list = open_file_with_new_line_to_array(GOOD_WORDS_FILE_PATH)
+    words_list = open_yaml_two_level_value_to_array(GOOD_WORDS_FILE_PATH)
     # New random comments
     comments = random_bot_comments(messages, words_list, RADOM_RATE)
     # Bulk insert(activerecord-import Gem)
