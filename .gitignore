@@ -48,3 +48,6 @@ config/initializers/secret_token.rb
 # Mac
 .DS_Store
 ~*
+
+# Ignore Web service contents
+/lib/dictionaries/
