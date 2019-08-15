@@ -11,14 +11,14 @@ namespace :bot_comments do
   desc "Bot posts comments first waves"
   task :first_waves => :environment do
     HOURS_COUNT = 1.freeze
-    RADOM_RATE = 2.freeze
+    RANDOM_RATE = 2.freeze
 
     # Get Messages
     messages = Message.recently_within_hours(HOURS_COUNT).sentence
     # Call concerns/file_controllable.rb
     words_list = open_yaml_two_level_value_to_array(GOOD_WORDS_FILE_PATH)
     # New random comments
-    comments = random_bot_comments(messages, words_list, RADOM_RATE)
+    comments = random_bot_comments(messages, words_list, RANDOM_RATE)
     # Bulk insert(activerecord-import Gem)
     Comment.import(comments)
   end
@@ -26,14 +26,14 @@ namespace :bot_comments do
   desc "Bot posts comments second waves"
   task :second_waves => :environment do
     HOURS_COUNT = 12.freeze
-    RADOM_RATE = 5.freeze
+    RANDOM_RATE = 5.freeze
 
     # Get Messages
     messages = Message.recently_within_hours(HOURS_COUNT).sentence
     # Open good words dictionary file
     words_list = open_yaml_two_level_value_to_array(GOOD_WORDS_FILE_PATH)
     # New random comments
-    comments = random_bot_comments(messages, words_list, RADOM_RATE)
+    comments = random_bot_comments(messages, words_list, RANDOM_RATE)
     # Bulk insert(activerecord-import Gem)
     Comment.import(comments)
   end
