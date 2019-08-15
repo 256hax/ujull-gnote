@@ -50,4 +50,3 @@ config/initializers/secret_token.rb
 ~*
 
 # Ignore Web service contents
-/lib/dictionaries/
