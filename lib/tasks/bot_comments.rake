@@ -24,7 +24,7 @@ namespace :bot_comments do
     # Call concerns/file_controllable.rb
     words_list = open_yaml_two_level_value_to_array(good_words_file_path)
     # New random comments
-    comments = random_bot_comments(bot_user_id, messages, words_list, random_rate)
+    comments = random_bot_comments(messages, words_list, random_rate, bot_user_id)
     # Bulk insert(activerecord-import Gem)
     Comment.import(comments)
   end
@@ -39,13 +39,13 @@ namespace :bot_comments do
     # Open good words dictionary file
     words_list = open_yaml_two_level_value_to_array(good_words_file_path)
     # New random comments
-    comments = random_bot_comments(bot_user_id, messages, words_list, random_rate)
+    comments = random_bot_comments(messages, words_list, random_rate, bot_user_id)
     # Bulk insert(activerecord-import Gem)
     Comment.import(comments)
   end
 end
 
-def random_bot_comments(bot_user_id, messages, words_list, random_rate)
+def random_bot_comments(messages, words_list, random_rate, bot_user_id)
   comments = []
 
   messages.each do |m|
