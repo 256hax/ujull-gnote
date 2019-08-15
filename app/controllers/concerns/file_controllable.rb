@@ -13,10 +13,10 @@ module FileControllable
     text_list = []
 
     File.foreach(file_path) { |l|
-      text_list << l.chomp
+      list << l.chomp
     }
 
-    return text_list
+    return list
   end
 
   #----------------------------------
@@ -25,27 +25,29 @@ module FileControllable
   # returns  : array
   # remarks  : for example
   # --- YAML file ---
-  #  A:
-  #   - 1
-  #   - 2
-  #  B:
-  #   - 3
-  #   - 4
+  #  A:    # level 1 value
+  #   - 1  # level 2 value
+  #   - 2  # level 2 value
+  #  B:    # level 1 value
+  #   - 3  # level 2 value
+  #   - 4  # level 2 value
   # -----------------
-  # => return 1, 2, 3, 4
+  # => return array[1, 2, 3, 4]
   #----------------------------------
   def open_yaml_two_level_value_to_array(file_path)
-    text_list = []
+    list = []
 
     good_words_list = YAML.load_file(file_path)
 
     good_words_list.each do |category|
+      # category[0] => level 1 values in YAML
+      # category[1] => level 2 values in YAML
       category[1].each do |v|
-        text_list << v.chomp
+        list << v.chomp
       end
     end
 
-    return text_list
+    return list
   end
 
 end
