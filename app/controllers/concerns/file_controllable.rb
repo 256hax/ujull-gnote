@@ -20,7 +20,7 @@ module FileControllable
   end
 
   #----------------------------------
-  # Open YAML file with two level value convert to array
+  # level two value in YAML file convert to array
   # args     : YAML file full path
   # returns  : array
   # remarks  : for example
@@ -34,7 +34,7 @@ module FileControllable
   # -----------------
   # => return array[1, 2, 3, 4]
   #----------------------------------
-  def open_yaml_two_level_value_to_array(file_path)
+  def open_yaml_level_two_value_to_array(file_path)
     list = []
 
     good_words_list = YAML.load_file(file_path)
