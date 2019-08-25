@@ -17,7 +17,7 @@ namespace :bot_comments do
   task :first_waves => :environment do
     hours_count = 1.freeze
     random_rate_comments = 2.freeze
-    random_rate_words_end = 3.freeze
+    random_rate_words_end = 2.freeze
 
     # Get Messages
     messages = Message.recently_within_hours(hours_count).sentence

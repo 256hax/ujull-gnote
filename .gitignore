@@ -50,3 +50,5 @@ config/initializers/secret_token.rb
 ~*
 
 # Ignore Web service contents
+lib/dictionaries/good_words.yml
+lib/dictionaries/sentence_ending_words.yml
