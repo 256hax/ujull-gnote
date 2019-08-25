@@ -15,6 +15,7 @@ namespace :bot_comments do
 
   desc "Bot posts comments first waves"
   task :first_waves => :environment do
+    #--- Config ---
     hours_count = 1.freeze
     random_rate_comments = 2.freeze
     random_rate_words_end = 2.freeze
@@ -43,8 +44,10 @@ namespace :bot_comments do
 
   desc "Bot posts comments second waves"
   task :second_waves => :environment do
+    #--- Config ---
     hours_count = 12.freeze
     random_rate_comments = 5.freeze
+    random_rate_words_end = 2.freeze
 
     # Get Messages
     messages = Message.recently_within_hours(hours_count).sentence
