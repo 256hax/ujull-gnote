@@ -13,10 +13,13 @@ module BotSettable
   # Return good words list file path
   #----------------------------------
   def get_good_words_list_path
-    if Rails.env.test?
-      "#{Rails.root.to_s}/lib/dictionaries/good_words.test.yml".freeze
-    else
+    case Rails.env
+    when 'production'
+      "lib/dictionaries/good_words.yml".freeze # in Dokku app directory
+    when 'development'
       "#{Rails.root.to_s}/lib/dictionaries/good_words.yml".freeze
+    when 'test'
+      "#{Rails.root.to_s}/lib/dictionaries/good_words.test.yml".freeze
     end
   end
 
@@ -24,10 +27,13 @@ module BotSettable
   # Return sentence ending words list file path
   #----------------------------------
   def get_sentence_ending_words_list_path
-    if Rails.env.test?
-      "#{Rails.root.to_s}/lib/dictionaries/sentence_ending_words.test.yml".freeze
-    else
+    case Rails.env
+    when 'production'
+      "lib/dictionaries/sentence_ending_words.yml".freeze # in Dokku app directory
+    when 'development'
       "#{Rails.root.to_s}/lib/dictionaries/sentence_ending_words.yml".freeze
+    when 'test'
+      "#{Rails.root.to_s}/lib/dictionaries/sentence_ending_words.test.yml".freeze
     end
   end
 end
