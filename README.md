@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/256hax/ujull-gnote.svg?branch=master)](https://travis-ci.org/256hax/ujull-gnote)
+[![Build Status](https://travis-ci.com/256hax/ujull-gnote.svg?branch=master)](https://travis-ci.com/256hax/ujull-gnote)
 
 My Pet Project. gnote (ほめノート📔) is praise comments service.
 - All users are anonymous
